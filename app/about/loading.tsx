@@ -3,8 +3,12 @@ import Image from "next/image";
 function Loading() {
   return (
     <div>
-      <h1>Loading...........</h1>
-      <Image src="/spinner.svg" width={48} height={48} alt="Loading..." />
+      <Image
+        src="/icons8-spinner.gif"
+        width={500}
+        height={500}
+        alt="Loading..."
+      />
     </div>
   );
 }

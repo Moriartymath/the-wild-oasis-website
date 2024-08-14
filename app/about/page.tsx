@@ -1,5 +1,6 @@
 import styles from "./about.module.css";
 import Article from "../_components/Article/Article";
+import Link from "next/link";
 
 function Page() {
   const arr = [
@@ -30,7 +31,23 @@ Over the years, we've maintained the essence of The Wild Oasis, blending the tim
           img={article.img}
           key={article.text}
           inverted={i !== 0}
-        />
+        >
+          {i !== 0 ? (
+            <Link href={"/cabins"}>
+              <button
+                style={{
+                  border: 0,
+                  fontSize: "2rem",
+
+                  padding: "1rem",
+                  backgroundColor: "wheat",
+                }}
+              >
+                Explore our luxury cabins
+              </button>
+            </Link>
+          ) : null}
+        </Article>
       ))}
     </div>
   );

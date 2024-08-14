@@ -1,0 +1,22 @@
+.item {
+  display: flex;
+  flex-direction: row;
+  height: 15rem;
+
+  column-gap: 2rem;
+}
+
+.imageContainer {
+  height: 100%;
+}
+
+.imageContainer img {
+  height: 100%;
+  object-fit: fill;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  font-size: 1.6rem;
+}
