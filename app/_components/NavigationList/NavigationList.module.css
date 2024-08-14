@@ -1,0 +1,22 @@
+.list {
+  display: flex;
+  flex-direction: row;
+  column-gap: 2rem;
+  padding: 2rem;
+  justify-content: flex-end;
+  background: transparent;
+  list-style: none;
+}
+
+.item {
+  text-decoration: none;
+}
+
+.itemContainer {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: rgb(244, 185, 82);
+}
+.itemContainer:hover {
+  background-color: rgb(244, 185, 82, 0.5);
+}
