@@ -5,4 +5,30 @@
   align-items: center;
   padding: 1rem;
   color: white;
+  height: 100%;
+  width: 100%;
+  row-gap: 4rem;
+}
+.container section {
+  height: 32rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageContainer {
+  height: 100%;
+}
+.image {
+  height: 100%;
+  width: unset;
+}
+
+.textContainer {
+  width: 50%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4rem;
+  font-size: 1.2rem;
 }

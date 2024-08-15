@@ -1,20 +1,18 @@
-.img {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-}
-
 .welcomeContainer {
-  height: 100%;
-  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   font-size: 3.5rem;
-  position: fixed;
-  background-image: url("../../public/bg.png");
-  background-size: cover;
+  height: 100%;
   width: 100%;
-  background-position: 0;
+}
+
+.text {
+  z-index: 100;
+  margin-top: 20rem;
+}
+
+.image {
+  object-fit: cover;
 }

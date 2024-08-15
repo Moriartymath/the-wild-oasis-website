@@ -1,18 +1,23 @@
-import Link from "next/link";
 import { supabase } from "../supabase/supabase";
 import { CabinType } from "../_types/types";
 import CabinsList from "../_components/CabinsList/CabinsList";
+import styles from "@/app/_styles/Cabins.module.css";
+
+export const metadata = {
+  title: "Cabins",
+};
 
 async function Page() {
-  const res = await supabase.from("cabins").select("*");
+  const res = await supabase.from("cabins").select("*", { count: "exact" });
   if (res.error) throw new Error("error whilte fetching ");
 
+  console.log(res.data);
   const cabins = res.data as Array<CabinType>;
   return (
-    <div>
-      <div>
-        <h1>Our Luxury Cabins</h1>
-        <p>
+    <div className={styles.container}>
+      <div className={styles.textContainer}>
+        <h1 className={styles.title}>Our Luxury Cabins</h1>
+        <p className={styles.text}>
           Cozy yet luxurious cabins, located right in the heart of the Italian
           Dolomites. Imagine waking up to beautiful mountain views, spending
           your days exploring the dark forests around, or just relaxing in your

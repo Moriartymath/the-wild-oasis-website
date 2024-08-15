@@ -14,10 +14,10 @@ body {
   display: flex;
   color: white;
   flex-direction: column;
+  background-color: #141c24;
 }
 
 header {
-  height: 7%;
   z-index: 100;
   width: 100%;
   background-color: transparent;
@@ -25,13 +25,12 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #141c24;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #ffffff44;
+  padding: 1rem;
 }
 
 main {
   background-color: #141c24;
 }
 .main {
-  height: 93%;
 }

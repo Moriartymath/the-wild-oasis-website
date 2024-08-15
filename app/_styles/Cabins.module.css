@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  justify-content: center;
+  width: 70%;
+  align-self: center;
+}
+
+.textContainer .text {
+  font-size: 1.2rem;
+}
+
+.textContainer .title {
+  color: bisque;
+}

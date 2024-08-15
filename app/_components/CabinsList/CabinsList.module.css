@@ -6,3 +6,13 @@
   row-gap: 2rem;
   padding: 2rem;
 }
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+  justify-items: center;
+  gap: 3rem;
+  overflow-y: auto;
+  height: 50rem;
+}

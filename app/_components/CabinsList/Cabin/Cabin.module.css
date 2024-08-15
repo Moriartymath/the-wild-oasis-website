@@ -8,11 +8,13 @@
 
 .imageContainer {
   height: 100%;
+  position: relative;
+  aspect-ratio: 1/1;
 }
 
 .imageContainer img {
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
 }
 .container {
   display: flex;
