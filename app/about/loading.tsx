@@ -8,6 +8,7 @@ function Loading() {
         width={500}
         height={500}
         alt="Loading..."
+        unoptimized
       />
     </div>
   );

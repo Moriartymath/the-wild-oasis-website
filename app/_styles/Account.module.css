@@ -1,0 +1,25 @@
+.accountList {
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 1rem;
+}
+.accountList li {
+  background-color: transparent;
+  color: white;
+  padding: 0.5rem;
+  width: 10rem;
+}
+
+.accountList li:hover {
+  background-color: #565b604d;
+}
+
+.accountList li * {
+  color: white;
+}
+
+.childrenContainer {
+  display: flex;
+  padding: 2rem 4rem;
+  color: bisque;
+}

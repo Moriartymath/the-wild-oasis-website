@@ -1,9 +1,5 @@
 function Page() {
-  return (
-    <div>
-      <h1>This is account page</h1>
-    </div>
-  );
+  return <h1>Welcome, Illia</h1>;
 }
 
 export default Page;

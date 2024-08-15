@@ -1,5 +1,5 @@
 import Cabin from "@/app/_components/CabinsList/Cabin/Cabin";
-import { supabase } from "@/app/supabase/supabase";
+import { supabase } from "@/app/_supabase/supabase";
 import { redirect } from "next/navigation";
 
 async function Page({ params }: { params: { cabinId: string } }) {
