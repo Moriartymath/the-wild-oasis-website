@@ -4,6 +4,10 @@ type LayoutProps = {
   children: React.ReactNode;
 };
 
+export const metadata = {
+  title: { template: "account / %s", default: "account" },
+};
+
 function Layout({ children }: LayoutProps) {
   return (
     <div style={{ display: "flex", padding: "2rem" }}>

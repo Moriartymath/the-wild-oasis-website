@@ -15,6 +15,7 @@ body {
   color: white;
   flex-direction: column;
   background-color: #141c24;
+  overflow: hidden;
 }
 
 header {
@@ -33,4 +34,7 @@ main {
   background-color: #141c24;
 }
 .main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

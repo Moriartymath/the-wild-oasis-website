@@ -1,3 +1,7 @@
+export const metadata = {
+  title: "profile",
+};
+
 function Page() {
   return (
     <div>

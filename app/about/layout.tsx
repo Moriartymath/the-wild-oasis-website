@@ -3,6 +3,9 @@ import React from "react";
 type layoutProps = {
   children: React.ReactNode;
 };
+export const metadata = {
+  title: "about",
+};
 
 function MyLayout({ children }: layoutProps) {
   return (

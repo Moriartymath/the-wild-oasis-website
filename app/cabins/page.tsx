@@ -1,18 +1,14 @@
-import { supabase } from "../_supabase/supabase";
-import { CabinType } from "../_types/types";
 import CabinsList from "../_components/CabinsList/CabinsList";
 import styles from "@/app/_styles/Cabins.module.css";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "Cabins",
 };
 
-async function Page() {
-  const res = await supabase.from("cabins").select("*", { count: "exact" });
-  if (res.error) throw new Error("error whilte fetching ");
+export const revalidate = 10;
 
-  console.log(res.data);
-  const cabins = res.data as Array<CabinType>;
+async function Page() {
   return (
     <div className={styles.container}>
       <div className={styles.textContainer}>
@@ -27,7 +23,9 @@ async function Page() {
         </p>
       </div>
       <div>
-        <CabinsList cabins={cabins} />
+        <Suspense fallback={<h2>Fetching cabins, hang tight!</h2>}>
+          <CabinsList />
+        </Suspense>
       </div>
     </div>
   );

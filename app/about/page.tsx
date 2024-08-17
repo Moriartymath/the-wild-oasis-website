@@ -2,12 +2,14 @@ import styles from "./about.module.css";
 import bg1 from "@/public/about-1.jpg";
 import bg2 from "@/public/about-2.jpg";
 import Image from "next/image";
+import { supabase } from "../_supabase/supabase";
+import { CabinType } from "../_types/types";
 
 const arr = [
   {
     text: ` Where nature's beauty and comfortable living blend seamlessly. Hidden away in the heart of the Italian Dolomites, this is your paradise away from home. But it's not just about the luxury cabins. It's about the experience of reconnecting with nature and enjoying simple pleasures with family.
 
-Our 8 luxury cabins provide a cozy base, but the real freedom and peace you'll find in the surrounding mountains. Wander through lush forests, breathe in the fresh air, and watch the stars twinkle above from the warmth of a campfire or your hot tub.
+Our %s luxury cabins provide a cozy base, but the real freedom and peace you'll find in the surrounding mountains. Wander through lush forests, breathe in the fresh air, and watch the stars twinkle above from the warmth of a campfire or your hot tub.
 
 This is where memorable moments are made, surrounded by nature's splendor. It's a place to slow down, relax, and feel the joy of being together in a beautiful setting.`,
     title: "Welcome to The Wild Oasis",
@@ -22,7 +24,13 @@ Over the years, we've maintained the essence of The Wild Oasis, blending the tim
   },
 ];
 
-function Page() {
+export const revalidate = 60;
+
+async function Page() {
+  const res = await supabase.from("cabins").select("*", { count: "exact" });
+
+  const cabins = res.data as Array<CabinType>;
+
   return (
     <div className={styles.container}>
       {arr.map(({ text, title }, i) => {
@@ -33,7 +41,7 @@ function Page() {
           >
             <div className={styles.textContainer}>
               <h1>{title}</h1>
-              <p>{text}</p>
+              <p>{text.replace("%s", String(cabins.length))}</p>
             </div>
             <div className={styles.imageContainer}>
               <Image

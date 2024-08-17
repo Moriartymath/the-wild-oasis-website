@@ -1,12 +1,15 @@
 import Cabin from "./Cabin/Cabin";
 import { CabinType } from "@/app/_types/types";
 import styles from "./CabinsList.module.css";
+import { supabase } from "@/app/_supabase/supabase";
 
-type CabinsListProps = {
-  cabins: Array<CabinType>;
-};
+async function CabinsList() {
+  const res = await supabase.from("cabins").select("*", { count: "exact" });
+  if (res.error) throw new Error("error whilte fetching ");
 
-function CabinsList({ cabins }: CabinsListProps) {
+  console.log(res.data);
+  const cabins = res.data as Array<CabinType>;
+
   return (
     <div className={styles.container}>
       <div>
