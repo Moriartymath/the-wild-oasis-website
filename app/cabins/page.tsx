@@ -8,7 +8,11 @@ export const metadata = {
 
 export const revalidate = 10;
 
-async function Page() {
+async function Page({
+  searchParams,
+}: {
+  searchParams: { filter: "large" | "medium" | "small" };
+}) {
   return (
     <div className={styles.container}>
       <div className={styles.textContainer}>
@@ -23,8 +27,11 @@ async function Page() {
         </p>
       </div>
       <div>
-        <Suspense fallback={<h2>Fetching cabins, hang tight!</h2>}>
-          <CabinsList />
+        <Suspense
+          fallback={<h2>Fetching cabins, hang tight!</h2>}
+          key={searchParams.filter}
+        >
+          <CabinsList filter={searchParams.filter} />
         </Suspense>
       </div>
     </div>

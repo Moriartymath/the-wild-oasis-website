@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import NavigationList from "../_components/NavigationList/NavigationList";
 import styles from "@/app/_styles/Account.module.css";
 type LayoutProps = {

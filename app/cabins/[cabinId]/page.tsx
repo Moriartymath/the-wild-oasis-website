@@ -16,6 +16,7 @@ export async function generateMetadata({
   if (!data?.length) notFound();
   return {
     title: `Cabin ${data[0].id}`,
+    description: `My cabin ${data[0].id}`,
   };
 }
 
