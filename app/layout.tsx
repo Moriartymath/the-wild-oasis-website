@@ -3,6 +3,8 @@ import NavigationList from "./_components/NavigationList/NavigationList";
 import "@/app/_styles/globals.css";
 import Logo from "./_components/Logo/Logo";
 import { Alike_Angular } from "next/font/google";
+import { auth } from "./_lib/auth";
+import Image from "next/image";
 
 const fontMain = Alike_Angular({
   subsets: ["latin"],
@@ -18,7 +20,9 @@ export const metadata = {
   title: { template: "%s / Wild oasis", default: "Welcome / Wild oasis" },
 };
 
-function RootLayout({ children }: RootLayoutProps) {
+async function RootLayout({ children }: RootLayoutProps) {
+  const session = await auth();
+  console.log(session);
   return (
     <html>
       <body className={fontMain.className}>
@@ -31,6 +35,16 @@ function RootLayout({ children }: RootLayoutProps) {
               { href: "/account", title: "My account" },
             ]}
           />
+          {session?.user?.image && session?.user?.name ? (
+            <Image
+              src={session?.user?.image}
+              height={48}
+              width={48}
+              alt={session?.user?.name}
+              referrerPolicy="no-referrer"
+              style={{ borderRadius: "50%" }}
+            />
+          ) : null}
         </header>
         <main className={"main"}>{children}</main>
       </body>

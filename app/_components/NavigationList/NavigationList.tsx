@@ -1,8 +1,9 @@
 import Link from "next/link";
 import styles from "./NavigationList.module.css";
+import { signOutAction } from "@/app/_lib/actions";
 
 type NavigationListProps = {
-  list: Array<{ href: string; title: string }>;
+  list: Array<{ href: string; title: string; action?: Function }>;
   className?: string;
 };
 
